@@ -1,24 +1,23 @@
 ---
-title: Using Stardog PCF
+title: Using Stardog Service Broker for PCF
 owner: Partners
 ---
 
-This topic describes how to use Stardog PCF
+This topic describes how to use Stardog Service Broker for Pivotal Cloud Foundry (PCF).
 
-##<a id='using'></a> Using Stardog PCF
+##<a id='create'></a> Create an Instance
 
-The Stardog tile will deploy a service broker into the PCF environment.
-This service broker is then used to connection PCF apps to Stardog
+The Stardog Service Broker for PCF tile deploys a service broker into the PCF environment.
+This service broker is then used to connect PCF apps to Stardog
 Knowledge Graphs.
 
-### Create An Instance
+### Prerequisites
 
-In order to create an instance of a Stardog PCF service the following
-information is needed:
+You need the following to create an instance of a Stardog Service Broker for PCF service:
 
- 1. The URL to a pre-provisioned Stardog service.
- 1. The admin username and password for the Stardog service.
- 1. A configuration file with the above information.
+ + The URL to a pre-provisioned Stardog service
+ + The admin username and password for the Stardog service
+ + A configuration file with the above information
 
 For information on how to run Stardog please see the
 [documentation](https://docs.stardog.com/). An example configuration
@@ -37,35 +36,35 @@ Creating service instance myservice in org stardog-service-broker-org / space st
 OK
  </pre>
 
-The Stardog PCF service broker instructed Stardog to create a new
+The Stardog Service Broker for PCF service broker instructed Stardog to create a new
 knowledge graph and associated it with the newly created PCF service
-instance.  It is now ready to be bound to PCF applications.
+instance.  It is now ready to be bound to PCF apps.
 
-### Bind An Application To A Service
+##<a id='bind'></a> Bind an App to a Service
 
 The **perinstance** plan does not require any additional configuration.
-There are a couple of ways to bind a PCF application to a service
+There are a couple of ways to bind a PCF app to a service
 instance.  It can either be bound using the **cf bind-service** command or
-by adding a **services** stanza to the applications **manifest.yml** file.
+by adding a **services** stanza to the apps **manifest.yml** file.
 More information on this process can be found
 [here](https://docs.pivotal.io/p-identity/1-1/bind-apps.html).
 
-When a Stardog PCF service instance is bound to a PCF application a new
-Stardog user is created and associated with that PCF application.
+When a Stardog Service Broker for PCF service instance is bound to a PCF app a new
+Stardog user is created and associated with that PCF app.
 
-### VCAP_SERVICES
+##<a id='vcap'></a> VCAP_SERVICES
 
-Once an application is bound to a service instance the needed
+Once an app is bound to a service instance the needed
 connection information and credetials will be available to the PCF app in the
 VCAP_SERVICES environment variable.  The Stardog entry has the following
 fields:
 
 | Field             | Type      | Description
 | -----             | ----      | ------------ |
-| url               | string    | The URL of the Stardog service that is bound to the application. |
-| db_name           | string    | The Stardog database name to which the application is bound . |
-| username          | string    | The username credential that the application can use to connect to the Stardog database. |
-| password          | string    | The password credential that the application can use to connect to the Stardog database. |
+| url               | string    | The URL of the Stardog service that is bound to the app. |
+| db_name           | string    | The Stardog database name to which the app is bound . |
+| username          | string    | The username credential that the app can use to connect to the Stardog database. |
+| password          | string    | The password credential that the app can use to connect to the Stardog database. |
 
 An example VCAP_SERVICES document is below:
 

@@ -1,5 +1,5 @@
 ---
-title: Stardog PCF (Beta)
+title: Stardog Service Broker for PCF (Beta)
 owner: Partners
 ---
 <style>
@@ -15,41 +15,41 @@ owner: Partners
 
 <p class="note warning">
 <strong>WARNING!</strong>
-The Stardog tile is currently in beta and is intended for evaluation and
+The Stardog Service Broker for Pivotal Cloud Foundry (PCF) tile is currently in beta and is intended for evaluation and
 test purposes only. Do not use this product in a PCF production
 environment. </p>
 
 [Stardog](http://stardog.com) is the knowledge graph that lets you
-query, search, and analyze data.  Stardog PCF allows applications to
+query, search, and analyze data.  Stardog Service Broker for PCF allows apps to
 easily connect to a Stardog Knowledge Graph.
 
 ## <a id='overview'></a>Overview
 
-Stardog PCF enables PCF app developers to connect to a Stardog Knowledge
+Stardog Service Broker for PCF enables PCF app developers to connect to a Stardog Knowledge
 Graph.
 
-Stardog PCF supports a pre-provisioned service plan called
+Stardog Service Broker for PCF supports a pre-provisioned service plan called
 **perinstance**. A Stardog server must be started out of band and at a
 location that PCF can address. When a service instance is created with
 the **perinstance** plan the URL and administrator credentials to that
 Stardog server must be provided.  The service broker uses that information
 to create a Stardog database and associates it with the service
-instance.  When an application is bound to that service instance, a new
+instance.  When an app is bound to that service instance, a new
 user is created and granted access to that database and that username is
-associated with the bound application.
+associated with the bound app.
 
 ## <a id='features'></a>Key Features
 
-Stardog PCF includes the following key features:
+Stardog Service Broker for PCF includes the following key features:
 
 * Provisions a Stardog Knowledge Graph for use with one or more PCF
-applications.
-* Securely binds applications to Stardog Knowledge Graph users.
+apps.
+* Securely binds apps to Stardog Knowledge Graph users.
 
 ## <a id="snapshot"></a>Product Snapshot
 
 The following table provides version and version-support information
-about Stardog PCF.
+about Stardog Service Broker for PCF.
 
 <table class="nice">
     <th>Element</th>
@@ -82,11 +82,11 @@ about Stardog PCF.
 
 ## <a id="reqs"></a>Requirements
 
-Stardog PCF has the following requirements:
+Stardog Service Broker for PCF has the following requirements:
 
 + A pre-provisioned Stardog Knowledge Graph.
 
-For information about how to set up a pre-provisioned Stardog Knowledge Graph, see [Stardog 4: The Manual](https://docs.stardog.com]. 
+For information about how to set up a pre-provisioned Stardog Knowledge Graph, see [Stardog 4: The Manual](https://docs.stardog.com). 
 
 ## <a id="limitations"></a>Limitations
 
@@ -98,4 +98,4 @@ send an email to (mailto:support@stardog.com).
 
 ## <a id='license'></a>License
 
-Stardog PCF is released under the Apache 2.0 license.
+Stardog Service Broker for PCF is released under the Apache 2.0 license.
