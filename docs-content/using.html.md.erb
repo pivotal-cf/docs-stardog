@@ -8,16 +8,17 @@ This topic describes how app developers use Stardog Service Broker for Pivotal C
 ##<a id='create'></a> Create an Instance
 
 The Stardog Service Broker for PCF tile deploys a service broker into the PCF environment.
-This service broker is then used to connect PCF apps to the Stardog
-Knowledge Graphs server.
+This service broker is then used to connect PCF apps to the Stardog server or cluster.
+
+**Prerequisite**: You must have admin access to a running Stardog server.
+   For information about acquiring and running a Stardog server, see [Download Stardog](http://stardog.com/#download).
 
 Follow the steps below to create an instance of a Stardog Service Broker for PCF service: 
 
-1. Verify that you have the following for your pre-provisioned Stardog Knowledge Graph:
- + The URL to a pre-provisioned Stardog service<br>
-   You must have admin access to a running Stardog server.
-   For information about acquiring and running a Stardog server, see [Download Stardog](http://stardog.com/#download).
- + The admin username (USERNAME) and password (PASSWORD) for the pre-provisioned Stardog service
+1. Verify that you have the following for your pre-provisioned Stardog server:
+ + The URL
+ + The admin username (USERNAME)
+ + The admin password (PASSWORD)
 
 
 2. On a local file system, create a JSON file with the following format: 
@@ -51,8 +52,8 @@ Follow the steps below to create an instance of a Stardog Service Broker for PCF
     OK </pre>
 
 Stardog Service Broker for PCF instructs Stardog to create a new
-knowledge graph and associates it with the newly created PCF service
-instance.  It is now ready to be bound to PCF apps.
+new database and associates it with the newly created PCF service instance. 
+It is now ready to be bound to PCF apps.
 
 ##<a id='bind'></a> Bind an App to a Service
 
@@ -66,7 +67,8 @@ For general information about binding a service instance to an app,
 see [Bind a Service Instance](https://docs.pivotal.io/pivotalcf/1-10/devguide/services/managing-services.html#bind).
 
 When a Stardog Service Broker for PCF service instance is bound to a PCF app, a new
-Stardog user is created and associated with that PCF app.
+Stardog user is created, associated with that PCF app, and granted access to the Stardog database for the app.
+
 
 ##<a id='vcap'></a> About VCAP_SERVICES
 
