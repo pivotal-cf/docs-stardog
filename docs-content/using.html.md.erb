@@ -30,7 +30,7 @@ Follow the steps below to create an instance of a Stardog Service Broker for PCF
    For example:
    <pre class="terminal">
     {
-      "url": "http<span>:</span>//pcftile-1000000000.us-west-2.elb.amazonaws.com:5820",
+      "url": "http<span>://</span>pcftile-1000000000.us-west-2.elb.amazonaws.com:5820",
       "username": "admin",
       "password": "somepassword"
     }</pre>
@@ -93,7 +93,7 @@ An example VCAP_SERVICES document is below:
       "plan": "shareddb",
       "credentials": {
           "db_name": "dbdbdbdbdbdbdbdbdb",
-          "url": "http://somehost.com:5821",
+          "url": "<span>http://</span>somehost.com:5821",
           "password": "PasswordPasswordPassword",
           "username": "stardog1stardog"
       }
